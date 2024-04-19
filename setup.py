@@ -68,7 +68,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=URL,
-    author="TODO: Add 'author' to .projenrc.json and run pj",
+    author="Michelle T.",
     author_email="TODO: Add 'authorAddress' to .projenrc.json and run pj",
     license="# TODO: Add 'license' to .projenrc.json and run pj",
     package_dir={SKILL_PKG: "src"},
