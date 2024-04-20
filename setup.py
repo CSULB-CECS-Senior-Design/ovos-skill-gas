@@ -3,8 +3,8 @@ from setuptools import setup
 from os import walk, path
 
 BASEDIR = path.abspath(path.dirname(__file__))
-URL = "TODO: Add 'repositoryUrl' to .projenrc.json and run pj"
-SKILL_CLAZZ = "TODO: Add 'skillClass' to .projenrc.json and run pj"  # needs to match __init__.py class name
+URL = "https://github.com/CSULB-CECS-Senior-Design/ovos-skill-gas"
+SKILL_CLAZZ = "Mq2Sensor"  # needs to match __init__.py class name
 PYPI_NAME = "ovos-skill-gas"  # pip install PYPI_NAME
 
 # below derived from github url to ensure standard skill_id
