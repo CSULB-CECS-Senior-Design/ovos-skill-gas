@@ -5,6 +5,11 @@ from ovos_workshop.decorators import intent_handler
 # from ovos_workshop.intents import IntentHandler # Uncomment to use Adapt intents
 from ovos_workshop.skills import OVOSSkill
 
+# add the home directory to access GasSensor.py
+import sys
+sys.path.insert(1, '/home/ovos')
+from GasSensor import mq2Sensor
+
 # Optional - if you want to populate settings.json with default values, do so here
 DEFAULT_SETTINGS = {
     "setting1": True,
@@ -22,6 +27,7 @@ class Mq2Sensor(OVOSSkill):
         Skill, ideally after the super() call.
         """
         super().__init__(*args, bus=bus, **kwargs)
+        self.sensor = mq2Sensor() # create MQ-2 instance
         self.learning = True
 
     def initialize(self):
@@ -57,6 +63,7 @@ class Mq2Sensor(OVOSSkill):
         It is triggered using a list of sample phrases."""
         self.log.info("Reading external MQ-2 sensor")
         self.speak_dialog("read_sensor.dialog")
+        self.speak(str(self.sensor.getSensorVal()))
 
     # @intent_handler(IntentBuilder("HelloWorldIntent").require("HelloWorldKeyword"))
     # def handle_hello_world_intent(self, message):
