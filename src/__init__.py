@@ -72,7 +72,7 @@ class Mq2Sensor(OVOSSkill):
         the skills.log file."""
         self.log.info("Reading external MQ-2 sensor")
         self.speak_dialog("read_sensor")
-        self.speak(str(self.sensor.getSensorVal()))
+        self.speak(str(self.sensor.getSensorVal()) + "ppm")
 
     def stop(self):
         """Optional action to take when "stop" is requested by the user.
