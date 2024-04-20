@@ -63,7 +63,7 @@ class Mq2Sensor(OVOSSkill):
         It is triggered using a list of sample phrases."""
         self.log.info("Reading external MQ-2 sensor")
         self.speak_dialog("read_sensor")
-        self.speak(str(self.sensor.getSensorVal()))
+        self.speak(str(self.sensor.getSensorVal()) + "ppm")
 
     # @intent_handler(IntentBuilder("HelloWorldIntent").require("HelloWorldKeyword"))
     # def handle_hello_world_intent(self, message):
