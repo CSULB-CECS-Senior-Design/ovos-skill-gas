@@ -62,15 +62,17 @@ class Mq2Sensor(OVOSSkill):
         """This is a Padatious intent handler.
         It is triggered using a list of sample phrases."""
         self.log.info("Reading external MQ-2 sensor")
-        self.speak_dialog("read_sensor.dialog")
+        self.speak_dialog("read_sensor")
         self.speak(str(self.sensor.getSensorVal()))
 
-    # @intent_handler(IntentBuilder("HelloWorldIntent").require("HelloWorldKeyword"))
-    # def handle_hello_world_intent(self, message):
-    #     """This is an Adapt intent handler, it is triggered by a keyword.
-    #     Skills can log useful information. These will appear in the CLI and
-    #     the skills.log file."""
-    #     self.speak_dialog("hello_world")
+    @intent_handler(IntentBuilder("GasIntent").require("SensorKey"))
+    def handle_hello_world_intent(self, message):
+        """This is an Adapt intent handler, it is triggered by a keyword.
+        Skills can log useful information. These will appear in the CLI and
+        the skills.log file."""
+        self.log.info("Reading external MQ-2 sensor")
+        self.speak_dialog("read_sensor")
+        self.speak(str(self.sensor.getSensorVal()))
 
     def stop(self):
         """Optional action to take when "stop" is requested by the user.
