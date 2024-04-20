@@ -62,7 +62,7 @@ class Mq2Sensor(OVOSSkill):
         """This is a Padatious intent handler.
         It is triggered using a list of sample phrases."""
         self.log.info("Reading external MQ-2 sensor")
-        self.speak_dialog("read_sensor.dialog")
+        self.speak_dialog("read_sensor")
         self.speak(str(self.sensor.getSensorVal()))
 
     # @intent_handler(IntentBuilder("HelloWorldIntent").require("HelloWorldKeyword"))
